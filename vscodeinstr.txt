@@ -1,0 +1,29 @@
+1. download git for windows
+https://git-scm.com/download/win
+
+2. download vscode
+https://code.visualstudio.com/
+
+3. download java extensions
+https://aka.ms/vscode-java-installer-win
+
+4. open cmd, use following commands
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+replace quoted sections with first name, and iup email
+
+5. paste git link into vscode
+
+6. set directory for files to go. 
+
+7. after making changes, go to source tab, to start upload process.
+
+8. select changes to "stage"
+
+9. enter a message in the top box of source control, DO NOT LEAVE BLANK
+
+10. click commit
+
+11. click sync changes
+
+note: git will authenticate through web browser. be ready to sign in
