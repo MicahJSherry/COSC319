@@ -49,8 +49,8 @@ public class Schedule {
 		return status;
 	}
 	
-	public String printSchedule(ArrayList<Doctor> doctors, ArrayList<Nurse> nurses) {
-		Doctor prescriber = new Doctor(doc_id);
+	public String printSchedule(ArrayList<Staff> doctors, ArrayList<Nurse> nurses) {
+		Staff prescriber = new Staff(doc_id);
 		int doc_index = doctors.indexOf(prescriber);
 		
 		Nurse administer = new Nurse(nurse_id);

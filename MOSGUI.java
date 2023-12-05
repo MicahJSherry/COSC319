@@ -5,12 +5,11 @@ import javax.swing.JOptionPane;
 public class MOSGUI {
 	public static void main(String[] args) {
 
-		ArrayList<Doctor> doctors = new ArrayList<Doctor>();
-		ArrayList<Nurse> nurses = new ArrayList<Nurse>();
+		ArrayList<Staff> Staffs = new ArrayList<Staff>();
 		
-		Doctor doc1 = new Doctor("211", "Thomas", "Hobbes");
-		Doctor doc2 = new Doctor("245", "Adam", "Smith");
-		Doctor doc3 = new Doctor("289", "Francis", "Bacon");
+		Staff Staff1 = new Staff("211", "Thomas", "Hobbes");
+		Staff Staff2 = new Staff("245", "Adam", "Smith");
+		Staff Staff3 = new Staff("289", "Francis", "Bacon");
 		
 		Nurse nurse1 = new Nurse("120", "David", "Hume");
 		Nurse nurse2 = new Nurse("104", "John", "Locke");
@@ -21,6 +20,10 @@ public class MOSGUI {
 
 		//JOptionPane.showMessageDialog(null, target.getFirst_name(), "Last Name of Doc", 0);
 
+		Staff Staff4 = new Staff("120", "David", "Hume");
+		Staff Staff5 = new Staff("104", "John", "Locke");
+		Staff Staff6 = new Staff("167", "George", "Berkeley");
+		
 	}
 	
 //	public void Scan(String drug_id) {
