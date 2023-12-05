@@ -5,6 +5,7 @@ public class Doctor {
 	private String last_name;
 	
 	public Doctor(String id, String first_name, String last_name) {
+
 		super();
 		this.id = id;
 		this.first_name = first_name;

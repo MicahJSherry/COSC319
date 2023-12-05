@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class MOSGUI {
 	public static void main(String[] args) {
 
@@ -13,7 +15,12 @@ public class MOSGUI {
 		Nurse nurse1 = new Nurse("120", "David", "Hume");
 		Nurse nurse2 = new Nurse("104", "John", "Locke");
 		Nurse nurse3 = new Nurse("167", "George", "Berkeley");
-		
+
+		//Doctor target = new Doctor("245");
+
+
+		//JOptionPane.showMessageDialog(null, target.getFirst_name(), "Last Name of Doc", 0);
+
 	}
 	
 //	public void Scan(String drug_id) {
