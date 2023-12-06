@@ -28,6 +28,13 @@ public class Staff {
 	public String getLast_name() {
 		return last_name;
 	}
-	
+	@Override
+    public String toString() {
+        return "Staff{" +
+                "id='" + id + '\'' +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                '}';
+    }
 }
 
