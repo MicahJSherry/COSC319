@@ -61,7 +61,7 @@ public class NurseGUI implements ActionListener{
 		
 		//barcode information from drug class (hardcoded and matching doctor's input)
 		barcodeLog = new JLabel("");
-		barcodeLog.setBounds(640,110,300,25);
+		barcodeLog.setBounds(640,110,400,25);
 		panel.add(barcodeLog);
 
 		//patient id enter button
