@@ -36,5 +36,17 @@ public class Staff {
                 ", last_name='" + last_name + '\'' +
                 '}';
     }
+
+	 @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj) {
+	            return true;
+	        }
+	        if (obj == null || getClass() != obj.getClass()) {
+	            return false;
+	        }
+	        Staff other = (Staff) obj;
+	        return id.equals(other.id); // Compare based on ID
+	    }
 }
 
