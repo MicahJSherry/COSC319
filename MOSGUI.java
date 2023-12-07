@@ -7,15 +7,15 @@ public class MOSGUI {
 		Scanner scanner = new Scanner(System.in);
 		ArrayList<Staff> staffList = new ArrayList<Staff>();
 		
-		Staff Staff1 = new Staff("211", "Thomas", "Hobbes");
-		Staff Staff2 = new Staff("245", "Adam", "Smith");
-		Staff Staff3 = new Staff("289", "Francis", "Bacon");
+		Staff Staff1 = new Doctor("211", "Thomas", "Hobbes");
+		Staff Staff2 = new Doctor("245", "Adam", "Smith");
+		Staff Staff3 = new Doctor("289", "Francis", "Bacon");
 		staffList.add(Staff1);
 		staffList.add(Staff2);
 		staffList.add(Staff3);
-		Staff Staff4 = new Staff("120", "David", "Hume");
-		Staff Staff5 = new Staff("104", "John", "Locke");
-		Staff Staff6 = new Staff("167", "George", "Berkeley");
+		Staff Staff4 = new Nurse("120", "David", "Hume");
+		Staff Staff5 = new Nurse("104", "John", "Locke");
+		Staff Staff6 = new Nurse("167", "George", "Berkeley");
 		staffList.add(Staff4);
 		staffList.add(Staff5);
 		staffList.add(Staff6);
