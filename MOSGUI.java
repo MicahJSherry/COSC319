@@ -44,6 +44,17 @@ public class MOSGUI {
 			String ID = staff.get(check_index).getId();
 			char doc_num = '1';
 			char nurse_num = '2';
+
+			// ID not found
+			/*if (check_index < 0) 
+			{ 
+				JOptionPane.showMessageDialog(null, "ID was not found in database. Please try again", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				login = JOptionPane.showInputDialog(null, "Enter ID to login:\n\nType \"quit\" to quit", "Login",
+						JOptionPane.INFORMATION_MESSAGE);
+				target = new Staff(login);
+				continue;
+			}*/
 			
 				// Doctor Login
 			if(ID.charAt(0) == doc_num) {
