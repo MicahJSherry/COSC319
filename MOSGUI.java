@@ -1,9 +1,13 @@
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 
 public class MOSGUI {
-	public static void main(String[] args) {
+	@SuppressWarnings("resource")
+	public static void main(String[] args) throws FileNotFoundException {
 
 		ArrayList<Staff> staff = new ArrayList<Staff>();
 		
@@ -54,7 +58,6 @@ public class MOSGUI {
 				    JTextField field4 = new JTextField(10);
 				    JTextField field5 = new JTextField(10);
 				    JTextField field6 = new JTextField(10);
-				    JTextField field7 = new JTextField(10);
 					JPanel panel = new JPanel(new GridLayout(0, 1));
 			        panel.add(new JLabel("Enter Patient ID:"));
 			        panel.add(field1);
@@ -68,8 +71,7 @@ public class MOSGUI {
 			        panel.add(field5);
 			        panel.add(new JLabel("Enter Pickup Date:"));
 			        panel.add(field6);
-			        panel.add(new JLabel("Enter Pickup Status:"));
-			        panel.add(field7);
+
 
 			        int result = JOptionPane.showConfirmDialog(null, panel, "Schedule Maker",
 			                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
@@ -87,10 +89,24 @@ public class MOSGUI {
 			        String dr_last = field4.getText();
 			        String nurse_last = field5.getText();
 			        String pickup_d = field6.getText();
-			        String pickup_s = field7.getText();
-			        schedule_x = new Schedule(p_id, drug_id, dosage, dr_last, nurse_last, pickup_d, pickup_s);
+			      
+			        schedule_x = new Schedule(p_id, drug_id, dosage, dr_last, nurse_last, pickup_d);
 			        JOptionPane.showMessageDialog(null, schedule_x.printSchedule(), "Schedule", JOptionPane.INFORMATION_MESSAGE);
-			} else if(choice == JOptionPane.NO_OPTION) {
+			
+				
+				    //Add To DoctorInput.txt
+			        if (ID.charAt(0) == doc_num) {
+			        PrintStream writeDoctorNotes = new PrintStream(new FileOutputStream("DoctorInput.txt",true));
+					writeDoctorNotes.append("Patient ID:" + p_id + " Drug Id:" + drug_id + " Dosage:" + dosage + 
+					" Doctor Lastname:" + dr_last + " Nurse Lastname:" + nurse_last + " Pick Up Time:" + pickup_d + "\n");
+					
+					 
+					}
+					
+					
+					
+
+				} else if(choice == JOptionPane.NO_OPTION) {
 				login = JOptionPane.showInputDialog(null, "Enter ID to login:\n\nType \"quit\" to quit", "Login", JOptionPane.INFORMATION_MESSAGE);
 				target = new Staff(login);
 				continue;
