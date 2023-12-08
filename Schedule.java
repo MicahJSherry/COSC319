@@ -1,4 +1,3 @@
-
 public class Schedule {
 	private String patient_id;
 	private String doc_last_name;
@@ -9,7 +8,7 @@ public class Schedule {
 	private String status = "Not Admisistered";
 	
 	public Schedule(String patient_id, String drug_id, String dosage, String doc_last, String nurse_last,
-					String pickup_date, String status) {
+					String pickup_date) {
 		//use the other one
 				super();
 		this.patient_id = patient_id;
@@ -18,7 +17,6 @@ public class Schedule {
 		this.dosage = dosage;
 		this.drug_id = drug_id;
 		this.pickup_date = pickup_date;
-		this.status = status;
 	}
 	public Schedule(String patient_id, String drug_id, String dosage, String doc_last, String pickup_date) {
 		super();
@@ -28,8 +26,8 @@ public class Schedule {
 		this.drug_id = drug_id;
 		this.pickup_date = pickup_date;
 	}
-	public void changeStatus(String newStatus,String nurse_last){
-		this.status = newStatus;
+	public void changeStatus(String nurse_last){
+	
 		this.nurse_last_name = nurse_last;
 
 	}
@@ -70,7 +68,7 @@ public class Schedule {
 				"\n\nPrescribed by Dr. " + doc_last_name + 
 				"\n\nAdministered by " + nurse_last_name + 
 				"\n\nPickup date: " + pickup_date +
-				"\n\nPicked up: " + status + "\n";
+				"\n";
 		return schedule;
 	}
 }
