@@ -77,8 +77,24 @@ public class Main {
                 }
 
             } else {
-                test.NurseMenu((Nurse) s);
+                choice = test.NurseMenu((Nurse) s);
+                System.out.println(choice);
+                if (choice == -1) {
+                    break;
+                }
+                switch (choice) {
+                    case 0:
+                        String id = test.getPatientId();
+                        index = findShedule(schedules, id);
+                        if (index >= 0) {
+                            test.admisterDrug(schedules.get(index), (Nurse) s);
+                        } else {
+                            test.idError();
+                        }
 
+                    case 1:
+                        break;
+                }
             }
         }
     }

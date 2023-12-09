@@ -1,11 +1,7 @@
 package RefactoredCode;
 
-import java.util.*;
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 
 public class GUI {
 
@@ -86,7 +82,7 @@ public class GUI {
         return s;
     }
 
-    public void NurseMenu(Nurse nurse) {
+    public int NurseMenu(Nurse nurse) {
         // add to options"Veiw patients"
         String[] options = { "Admister drug", "Exit" };
         while (true) {
@@ -100,19 +96,25 @@ public class GUI {
             // chooses the path to go down
             // based on the index in the options list
             if (choice == options.length - 1) {
-                break;
+                choice = -1;
             }
-            switch (choice) {
-                case 0:
-                    // admisterDrug();
-                    break;
-
-            }
-
+            return choice;
         }
     }
 
-    public void admisterDrug(Schedule s) {
+    public void admisterDrug(Schedule s, Nurse nurse) {
+        while (true) {
+            String barcode = JOptionPane.showInputDialog(null,
+                    "Scan the drug barcode",
+                    "scan barcode",
+                    JOptionPane.INFORMATION_MESSAGE);
+            if (barcode.equals(s.getDrug_id())) {
+                s.setNurse_last(nurse.getLast_name());
+
+                displaySchedule(s);
+                break;
+            }
+        }
 
     }
 

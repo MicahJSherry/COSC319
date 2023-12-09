@@ -7,7 +7,7 @@ public class Schedule {
 	private String dosage;
 	private String drug_id;
 	private String pickup_date;
-	private String status = "Not Admisistered";
+	private String status = "Not Administered";
 
 	public Schedule(String patient_id, String drug_id, String dosage, String doc_last, String pickup_date) {
 		super();
@@ -18,9 +18,10 @@ public class Schedule {
 		this.pickup_date = pickup_date;
 	}
 
-	public void changeStatus(String nurse_last) {
+	public void setNurse_last(String nurse_last) {
 
 		this.nurse_last_name = nurse_last;
+		changeStatus();
 
 	}
 
@@ -52,15 +53,31 @@ public class Schedule {
 		return status;
 	}
 
-	public String printSchedule() {
+	public void changeStatus() {
+		this.status = "administered";
+	}
 
-		String schedule = "\nPatient ID: " + patient_id +
-				"\n\nDrug ID: " + drug_id +
-				"\n\nDosage: " + dosage +
-				"\n\nPrescribed by Dr. " + doc_last_name +
-				"\n\nAdministered by " + nurse_last_name +
-				"\n\nPickup date: " + pickup_date +
-				"\n";
+	public String printSchedule() {
+		String schedule;
+		if (status.equals("Not Administered")) {
+			schedule = "\nPatient ID: " + patient_id +
+					"\n\nDrug ID: " + drug_id +
+					"\n\nDosage: " + dosage +
+					"\n\nPrescribed by Dr. " + doc_last_name +
+					"\n\nStatus: " + status +
+					"\n\nPickup date: " + pickup_date +
+					"\n";
+
+		} else {
+			schedule = "\nPatient ID: " + patient_id +
+					"\n\nDrug ID: " + drug_id +
+					"\n\nDosage: " + dosage +
+					"\n\nPrescribed by Dr. " + doc_last_name +
+					"\n\nStatus: " + status +
+					"\n\nAdministered by " + nurse_last_name +
+					"\n\nPickup date: " + pickup_date +
+					"\n";
+		}
 		return schedule;
 	}
 }
