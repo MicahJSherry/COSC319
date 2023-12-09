@@ -71,4 +71,25 @@ public class Schedule {
 				"\n";
 		return schedule;
 	}
+	@Override
+    public String toString() {
+        return "\nPatient ID: " + patient_id +
+				"\nDrug ID: " + drug_id + 
+				"\nDosage: " + dosage + 
+				"\nPrescribed by Dr. " + doc_last_name + 
+				"\nAdministered by " + nurse_last_name + 
+				"\nPickup date: " + pickup_date +
+				"\n";
+    }
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Schedule other = (Schedule) obj;
+        return patient_id.equals(other.patient_id); // Compare based on ID
+    }
 }
