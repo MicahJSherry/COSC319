@@ -7,7 +7,6 @@ public class Main {
         GUI test = new GUI();
 
         ArrayList<Staff> staff = new ArrayList<Staff>();
-
         // Nurses
         Staff Staff1 = new Nurse("211", "Thomas", "Hobbes");
         Staff Staff2 = new Nurse("245", "Adam", "Smith");
@@ -33,32 +32,67 @@ public class Main {
         drug = new Drug("378", "Aspirin", "Green");
         drugList.add(drug);
 
+        int choice;
+        ArrayList<Schedule> schedules = new ArrayList<>();
+        int index = -1;
         while (true) {
-            int indexOfStaff = -1;
-            while (indexOfStaff < 0) {
+
+            while (index < 0) {
                 String id = test.login();
                 if (id == null) {
                     return;
                 }
-                indexOfStaff = findIndex(staff, id);
-                if (indexOfStaff < 0) {
+                index = findStaff(staff, id);
+                if (index < 0) {
                     test.displayLoginError();
                 }
             }
-            Staff s = staff.get(indexOfStaff);
+
+            Staff s = staff.get(index);
             if (s instanceof Doctor) {
-                test.DoctorMenu((Doctor) s);
+                while (true) {
+                    choice = test.DoctorMenu((Doctor) s);
+                    System.out.println(choice);
+                    if (choice == -1) {
+                        break;
+                    }
+                    switch (choice) {
+                        case 0:
+                            Schedule schedule = test.inputSchedule((Doctor) s);
+                            test.displaySchedule(schedule);
+                            schedules.add(schedule);
+                            break;
+                        case 1:
+                            String id = test.getPatientId();
+                            index = findShedule(schedules, id);
+                            test.displaySchedule(schedules.get(index));
+                            break;
+                    }
+                }
+
             } else {
                 test.NurseMenu((Nurse) s);
+
             }
         }
     }
 
-    public static int findIndex(ArrayList<Staff> staff, String id) {
+    public static int findStaff(ArrayList<Staff> staff, String id) {
 
         for (int i = 0; i < staff.size(); i++) {
             Staff s = staff.get(i);
             if (s.getId().equals(id)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int findShedule(ArrayList<Schedule> schedules, String id) {
+
+        for (int i = 0; i < schedules.size(); i++) {
+            Schedule s = schedules.get(i);
+            if (s.getPatient_id().equals(id)) {
                 return i;
             }
         }

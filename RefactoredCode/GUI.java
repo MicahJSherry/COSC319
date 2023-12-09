@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 public class GUI {
+
     public String login() {
         String login = JOptionPane.showInputDialog(null,
                 "Enter ID to login:",
@@ -17,13 +18,22 @@ public class GUI {
 
     }
 
+    public String getPatientId() {
+        String id = JOptionPane.showInputDialog(null,
+                "Enter patient ID to Veiw their Shedule",
+                "PatientId",
+                JOptionPane.INFORMATION_MESSAGE);
+        return id;
+
+    }
+
     public void displayLoginError() {
         JOptionPane.showMessageDialog(null, "ID was not found in database. Please try again", "Error",
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void DoctorMenu(Doctor doctor) {
-        String[] options = { "Make Schedule", "Exit" };
+    public int DoctorMenu(Doctor doctor) {
+        String[] options = { "Make Schedule", "veiw Schedule", "Exit" };
         while (true) {
 
             int choice = JOptionPane.showOptionDialog(null,
@@ -31,13 +41,10 @@ public class GUI {
                     "Dr. " + doctor.getLast_name() + "'s Login Menu",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-            if (choice == 0) {
-                Schedule s = inputSchedule(doctor);
-                displaySchedule(s);
-            } else {
-                break;
+            if (choice == options.length - 1) {
+                choice = -1;
             }
-
+            return choice;
         }
     }
 
@@ -70,7 +77,7 @@ public class GUI {
             result = JOptionPane.showConfirmDialog(null, panel, "Schedule Maker",
                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         }
-        System.out.println(result);
+
         Schedule s = new Schedule(patientId.getText(),
                 drugId.getText(),
                 dosage.getText(),
@@ -97,7 +104,7 @@ public class GUI {
             }
             switch (choice) {
                 case 0:
-                    admisterDrug();
+                    // admisterDrug();
                     break;
 
             }
@@ -105,8 +112,8 @@ public class GUI {
         }
     }
 
-    public void admisterDrug() {
-        System.out.println("admistering drug");
+    public void admisterDrug(Schedule s) {
+
     }
 
     public void displaySchedule(Schedule s) {
