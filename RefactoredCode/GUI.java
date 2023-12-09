@@ -27,7 +27,7 @@ public class GUI {
 
     }
 
-    public void displayLoginError() {
+    public void idError() {
         JOptionPane.showMessageDialog(null, "ID was not found in database. Please try again", "Error",
                 JOptionPane.ERROR_MESSAGE);
     }

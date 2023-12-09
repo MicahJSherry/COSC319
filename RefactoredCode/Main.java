@@ -34,9 +34,9 @@ public class Main {
 
         int choice;
         ArrayList<Schedule> schedules = new ArrayList<>();
-        int index = -1;
-        while (true) {
 
+        while (true) {
+            int index = -1;
             while (index < 0) {
                 String id = test.login();
                 if (id == null) {
@@ -44,7 +44,7 @@ public class Main {
                 }
                 index = findStaff(staff, id);
                 if (index < 0) {
-                    test.displayLoginError();
+                    test.idError();
                 }
             }
 
@@ -64,8 +64,14 @@ public class Main {
                             break;
                         case 1:
                             String id = test.getPatientId();
+
                             index = findShedule(schedules, id);
-                            test.displaySchedule(schedules.get(index));
+                            if (index >= 0) {
+                                test.displaySchedule(schedules.get(index));
+                            } else {
+                                test.idError();
+                            }
+
                             break;
                     }
                 }
