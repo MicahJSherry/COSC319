@@ -2,3 +2,5 @@ Patient ID:305 Drug Id:3847 Dosage:100 mg Doctor Lastname:Locke Nurse Lastname:S
 Patient ID:301 Drug Id:9485 Dosage:400 mg Doctor Lastname:Locke Nurse Lastname:Smith Pick Up Time:12/15/45
 Patient ID:315 Drug Id:4454 Dosage:300 mg Doctor Lastname:Berkeley Nurse Lastname:Bacon Pick Up Time:12/10/23
 Patient ID:311 Drug Id:4532 Dosage:100 mg Doctor Lastname:Hume Nurse Lastname:Smith Pick Up Time:12/2/23
+Patient ID:12 Drug Id: Dosage: Doctor Lastname: Nurse Lastname: Pick Up Time:
+Patient ID:111 Drug Id:papaperk Dosage:40 mg Doctor Lastname: Nurse Lastname: Pick Up Time:
