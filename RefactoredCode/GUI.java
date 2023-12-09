@@ -80,12 +80,37 @@ public class GUI {
     }
 
     public void NurseMenu(Nurse nurse) {
-        System.out.println("Nurse Menu");
+        // add to options"Veiw patients"
+        String[] options = { "Admister drug", "Exit" };
+        while (true) {
+
+            int choice = JOptionPane.showOptionDialog(null,
+                    "Welcome  " + nurse.getFirst_name() + " " + nurse.getLast_name() + "\n",
+                    nurse.getLast_name() + "'s Login Menu",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            System.out.println(choice);
+            // chooses the path to go down
+            // based on the index in the options list
+            if (choice == options.length - 1) {
+                break;
+            }
+            switch (choice) {
+                case 0:
+                    admisterDrug();
+                    break;
+
+            }
+
+        }
+    }
+
+    public void admisterDrug() {
+        System.out.println("admistering drug");
     }
 
     public void displaySchedule(Schedule s) {
         JOptionPane.showMessageDialog(null, s.printSchedule(), "Schedule",
                 JOptionPane.INFORMATION_MESSAGE);
     }
-
 }

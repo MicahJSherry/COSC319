@@ -12,6 +12,11 @@ public class Drug {
 		this.color = color;
 	}
 
+	public Drug(String barcode) {
+		super();
+		this.barcode = barcode;
+	}
+
 	public String getBarcode() {
 		return barcode;
 	}
@@ -23,17 +28,13 @@ public class Drug {
 	public String getColor() {
 		return color;
 	}
-	@Override
-    public String toString() {
-        return "drug{" +
-                "barcode='" + barcode + '\'' +
-  
 
-	         
-	            '}';
-		
-				
-				
-				
-				
-	
+	@Override
+	public String toString() {
+		return "drug{" +
+				"barcode='" + barcode + '\'' +
+				", name='" + name + '\'' +
+				", color='" + color + '\'' +
+				'}';
+	}
+}
