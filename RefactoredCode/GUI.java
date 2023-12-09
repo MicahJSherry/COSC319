@@ -5,11 +5,6 @@ import java.awt.*;
 
 public class GUI {
 
-    public GUI() {
-        super();
-
-    }
-
     public String login() {
 
         String login = JOptionPane.showInputDialog(null,
