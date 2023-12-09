@@ -5,7 +5,13 @@ import java.awt.*;
 
 public class GUI {
 
+    public GUI() {
+        super();
+
+    }
+
     public String login() {
+
         String login = JOptionPane.showInputDialog(null,
                 "Enter ID to login:",
                 "Login",
@@ -51,6 +57,7 @@ public class GUI {
         JTextField drLastname = new JTextField(10);
         JTextField date = new JTextField(10);
         JPanel panel = new JPanel(new GridLayout(0, 1));
+
         panel.add(new JLabel("Enter Patient ID:"));
         panel.add(patientId);
         panel.add(new JLabel("Enter Drug ID or Name:"));
@@ -113,6 +120,9 @@ public class GUI {
 
                 displaySchedule(s);
                 break;
+            } else {
+                JOptionPane.showMessageDialog(null, "the Barcode Scan failed", "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
 

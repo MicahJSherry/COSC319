@@ -71,29 +71,29 @@ public class Main {
                             } else {
                                 test.idError();
                             }
-
                             break;
                     }
                 }
 
             } else {
-                choice = test.NurseMenu((Nurse) s);
-                System.out.println(choice);
-                if (choice == -1) {
-                    break;
-                }
-                switch (choice) {
-                    case 0:
-                        String id = test.getPatientId();
-                        index = findShedule(schedules, id);
-                        if (index >= 0) {
-                            test.admisterDrug(schedules.get(index), (Nurse) s);
-                        } else {
-                            test.idError();
-                        }
+                while (true) {
 
-                    case 1:
+                    choice = test.NurseMenu((Nurse) s);
+                    System.out.println(choice);
+                    if (choice == -1) {
                         break;
+                    }
+                    switch (choice) {
+                        case 0:
+                            String id = test.getPatientId();
+                            index = findShedule(schedules, id);
+                            if (index >= 0) {
+                                test.admisterDrug(schedules.get(index), (Nurse) s);
+                            } else {
+                                test.idError();
+                            }
+                            break;
+                    }
                 }
             }
         }
