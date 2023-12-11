@@ -83,12 +83,23 @@ public class Main {
                     if (choice == -1) {
                         break;
                     }
+                    String id;
                     switch (choice) {
                         case 0:
-                            String id = test.getPatientId();
+                            id = test.getPatientId();
                             index = findShedule(schedules, id);
                             if (index >= 0) {
                                 test.admisterDrug(schedules.get(index), (Nurse) s);
+                            } else {
+                                test.idError();
+                            }
+                            break;
+                        case 1:
+                            id = test.getPatientId();
+
+                            index = findShedule(schedules, id);
+                            if (index >= 0) {
+                                test.displaySchedule(schedules.get(index));
                             } else {
                                 test.idError();
                             }

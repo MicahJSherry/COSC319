@@ -91,7 +91,7 @@ public class GUI {
 
     public int NurseMenu(Nurse nurse) {
         // add to options"Veiw patients"
-        String[] options = { "Admister drug", "Exit" };
+        String[] options = { "Admister drug","Veiw Schedule", "Exit" };
         while (true) {
 
             int choice = JOptionPane.showOptionDialog(null,
