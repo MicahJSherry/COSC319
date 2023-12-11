@@ -1,4 +1,3 @@
-package RefactoredCode;
 
 public class Schedule {
 	private String patient_id;

@@ -1,4 +1,3 @@
-package RefactoredCode;
 
 public class Nurse extends Staff {
 

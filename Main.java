@@ -1,9 +1,6 @@
 
-
 import java.util.ArrayList;
 
-import RefactoredCode.Nurse;
-import RefactoredCode.Schedule;
 
 public class Main {
     public static void main(String[] args) {
@@ -54,8 +51,7 @@ public class Main {
             Staff s = staff.get(index);
             if (s instanceof Doctor) {
                 while (true) {
-                    choice = test.DoctorMenu((Doctor) s);
-                    System.out.println(choice);
+                    choice = test.DoctorMenu((Doctor) s);                   
                     if (choice == -1) {
                         break;
                     }
@@ -82,7 +78,7 @@ public class Main {
                 while (true) {
 
                     choice = test.NurseMenu((Nurse) s);
-                    System.out.println(choice);
+                    
                     if (choice == -1) {
                         break;
                     }
