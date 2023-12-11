@@ -1,4 +1,4 @@
-package RefactoredCode;
+
 
 public class Staff {
 	private String id;

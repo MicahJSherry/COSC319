@@ -1,6 +1,10 @@
-package RefactoredCode;
+
 
 import javax.swing.*;
+
+import RefactoredCode.Nurse;
+import RefactoredCode.Schedule;
+
 import java.awt.*;
 
 public class GUI {

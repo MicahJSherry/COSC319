@@ -1,6 +1,9 @@
-package RefactoredCode;
+
 
 import java.util.ArrayList;
+
+import RefactoredCode.Nurse;
+import RefactoredCode.Schedule;
 
 public class Main {
     public static void main(String[] args) {
